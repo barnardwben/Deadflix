@@ -37,6 +37,19 @@
 // }
 // }
 
+
+const signIn = document.querySelector('.signInBtn');
+const registryBtn = document.querySelector('.registryBtn');
+
+// signIn.addEventListener('click', logIn);
+// registryBtn.addEventListener('click', signUp);
+
+// function logIn() {
+
+// }
+
+
+
 class Films {
   constructor(name, director, year) {
     this.name = name;

@@ -104,4 +104,78 @@ body {
   right: 10px;
   outline: none;
   border: none;
+  cursor: pointer;
+}
+
+.carrot {
+  font-family: 'Zilla Slab', serif;
+}
+
+/* login page */
+
+.brand-link {
+  text-decoration: none;
+  color: rgb(221, 11, 11);
+}
+
+.login-body-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  /* z-index: -1; */
+  /* background: rgba(0, 0, 0, 0.425); */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.774), rgba(0, 0, 0, 0.425), rgba(0, 0, 0, 0.719));
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+.login-form {
+  padding: 30px 68px 40px;
+  background-color: #000000bf;
+
+  position: absolute;
+  top: 15vh;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .5px;
+  border-radius: 5px;
+}
+
+.h1-signIn {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.input-login {
+  background-color: #E8F0FE;
+  border: none;
+  border-radius: 5px;
+  padding: 16px 20px;
+  width: 250px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.sgnBtn {
+  background-color: #E50914;
+  border: none;
+  border-radius: 5px;
+  padding: 13px 20px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  width: 290px;
+  font-family: 'Roboto', sans-serif;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+.rmme {
+  font-size: 12px;
+  color: #9e9e9e;
 }
