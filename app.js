@@ -37,15 +37,26 @@
 // }
 // }
 
-
-const signIn = document.querySelector('.signInBtn');
+// Variables
+const emailInp = document.querySelector('.email-input');
+const sgnBtn = document.querySelector('.sgnBtn');
 const registryBtn = document.querySelector('.registryBtn');
 
+// Event Listeners
+registryBtn.addEventListener('click', signUp);
 // signIn.addEventListener('click', logIn);
-// registryBtn.addEventListener('click', signUp);
+
+// Functions
+function signUp() {
+  if(emailInp.value === "") {
+    console.log('fill in email');
+  } else if (emailInp.value.includes("@")) {
+    window.location.href = "http://127.0.0.1:5500/signup.html";
+  }
+}
 
 // function logIn() {
-
+  
 // }
 
 
