@@ -41,12 +41,22 @@
 const emailInp = document.querySelector('.email-input');
 const sgnBtn = document.querySelector('.sgnBtn');
 const registryBtn = document.querySelector('.registryBtn');
+const navBar = document.querySelector('.nav-container');
 
 // Event Listeners
-registryBtn.addEventListener('click', signUp);
+// registryBtn.addEventListener('click', signUp);
 // signIn.addEventListener('click', logIn);
+document.addEventListener('scroll', backgroundChange)
 
 // Functions
+function backgroundChange() {
+  if(document.documentElement.scrollTop >= 40) {
+    navBar.classList.add('change');
+  } else {
+    navBar.classList.remove('change');
+  }
+}
+
 function signUp() {
   if(emailInp.value === "") {
     console.log('fill in email');
