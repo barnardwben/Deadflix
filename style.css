@@ -190,7 +190,8 @@ body {
   font-family: 'Fira Sans', sans-serif;
   letter-spacing: .15rem;
   transform: rotate(-5deg);
-  background-color: rgba(0, 0, 0, 0.425);
+  /* background-color: rgba(0, 0, 0, 0.425); */
+  border: 3px solid rgba(0, 0, 0, 0.438);
   padding: 15px;
   border-radius: 5px;
   margin: 18px 0 12px 3rem;
