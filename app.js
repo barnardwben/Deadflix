@@ -69,89 +69,97 @@ for (let i = 0; i < slideshow.length; i++) {
 
 }
 
-let amount = 0;
+
+
+// for (let i = 0; i < nextArr.length; i++) {
+//   let amount = 0;
+//   nextArr[i].addEventListener('click', function() {
+//     for (let j = 0; j < slideshow.length; j++) {
+//       if (i === j) {
+//         console.log(amount);
+//         if (amount >= -2015) {
+//           amount -=  1008;
+//           let translateAmt = `translateX( ${amount}px)`;
+//           slideshow[j].style.transform = translateAmt;
+//           slideshow[j].style.transition = '.8s all ease-in-out';
+//           slideshow[j].style.overflow = 'visible';
+//         }
+//       }
+//     }
+//   })
+//   for (let i = 0; i < lastArr.length; i++) {
+//     lastArr[i].addEventListener('click', function() {
+//       for (let j = 0; j < slideshow.length; j++) {
+//         if (i === j) {
+//           console.log(amount);
+//           if (amount <= -1) {
+//             amount += 1008;
+//             let translateAmt = `translateX( ${amount}px)`;
+//             slideshow[j].style.transform = translateAmt;
+//             slideshow[j].style.transition = '.8s all ease-in-out';
+//             slideshow[j].style.overflow = 'visible';
+//           }
+//         }
+//       }
+//     })
+//   }
+// }
+
+
+
 
 for (let i = 0; i < nextArr.length; i++) {
   nextArr[i].addEventListener('click', function() {
     for (let j = 0; j < slideshow.length; j++) {
       if (i === j) {
-        amount -=  1008;
-        let translateAmt = `translateX( ${amount}px)`;
-        slideshow[j].style.transform = translateAmt;
-        slideshow[j].style.transition = '.8s all ease-in-out';
-        slideshow[j].style.overflow = 'visible';
+        let val = window.getComputedStyle(slideshow[j]).getPropertyValue('transform');
+        let newVal  = val.slice(19, 24);
+        // newVal = Number(newVal);
+        console.log(newVal);
+        let stove = -1008;
+        let start = -1008;
+        if (Number(newVal) <= -2015) {
+          console.log('yup');
+        }
+        else if (newVal <= 0) {
+          let start1 = `translateX( ${Number(newVal) + start}px)`;
+          slideshow[j].style.transform = start1;
+          slideshow[j].style.transition = '.8s all ease-in-out';
+          slideshow[j].style.overflow = 'visible';
+
+        } else {
+          let startOver = `translateX(${stove}px)`;
+          slideshow[j].style.transform = startOver;
+          slideshow[j].style.overflow = 'visible';
+        }
+        
       }
     }
   })
 }
+
 for (let i = 0; i < lastArr.length; i++) {
   lastArr[i].addEventListener('click', function() {
     for (let j = 0; j < slideshow.length; j++) {
       if (i === j) {
-        amount +=  1008;
-        let translateAmt = `translateX( ${amount}px)`;
-        slideshow[j].style.transform = translateAmt;
-        slideshow[j].style.transition = '.8s all ease-in-out';
-        slideshow[j].style.overflow = 'visible';
+        let val = window.getComputedStyle(slideshow[j]).getPropertyValue('transform');
+        let newVal  = val.slice(19, 24);
+        // newVal = Number(newVal);
+        console.log(newVal);
+        let start = -1008
+        let start1 = `translateX( ${Number(newVal) - start}px)`;
+        if (newVal < 0) {
+          slideshow[j].style.transform = start1;
+          slideshow[j].style.overflow = 'visible';
+        } else {
+          console.log('greater than zero');
+        }
+        
+
       }
     }
   })
 }
-
-
-
-// for (let i = 0; i < nextArr.length; i++) {
-//   nextArr[i].addEventListener('click', function() {
-//     for (let j = 0; j < slideshow.length; j++) {
-//       if (i === j) {
-//         let val = window.getComputedStyle(slideshow[j]).getPropertyValue('transform');
-//         let newVal  = val.slice(19, 24);
-//         // newVal = Number(newVal);
-//         console.log(newVal);
-//         let stove = -1008;
-//         let start = -1008;
-//         if (Number(newVal) <= -2015) {
-//           console.log('yup');
-//         }
-//         else if (newVal <= 0) {
-//           let start1 = `translateX( ${Number(newVal) + start}px)`;
-//           slideshow[j].style.transform = start1;
-//           slideshow[j].style.transition = '.8s all ease-in-out';
-//           slideshow[j].style.overflow = 'visible';
-
-//         } else {
-//           let startOver = `translateX(${stove}px)`;
-//           slideshow[j].style.transform = startOver;
-//           slideshow[j].style.overflow = 'visible';
-//         }
-        
-//       }
-//     }
-//   })
-// }
-
-// for (let i = 0; i < lastArr.length; i++) {
-//   lastArr[i].addEventListener('click', function() {
-//     for (let j = 0; j < slideshow.length; j++) {
-//       if (i === j) {
-//         let val = window.getComputedStyle(slideshow[j]).getPropertyValue('transform');
-//         let newVal  = val.slice(19, 24);
-//         // newVal = Number(newVal);
-//         console.log(newVal);
-//         let start = -1008
-//         let start1 = `translateX( ${Number(newVal) - start}px)`;
-//         if (newVal < 0) {
-//           slideshow[j].style.transform = start1;
-//           slideshow[j].style.overflow = 'visible';
-//         } else {
-//           console.log('greater than zero');
-//         }
-        
-
-//       }
-//     }
-//   })
-// }
 
 
 
