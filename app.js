@@ -7,6 +7,30 @@ const slideshow = document.querySelectorAll('.slideshow')
 const nextArr = document.querySelectorAll('.next-arrow');
 const lastArr = document.querySelectorAll('.last-arrow');
 const imgs = document.querySelectorAll('.img');
+const vid = document.querySelector('.off-vid');
+const headerTxt = document.querySelector('.header-text');
+const overlay = document.querySelector('.overlay');
+const container = document.querySelector('.container');
+const images = document.querySelectorAll('.poster');
+
+
+{/* <iframe width="853" height="480" src="https://www.youtube.com/embed/sBmYRXKXffs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+
+// Array of vids;
+let arr = ['https://www.youtube.com/embed/sBmYRXKXffs'];
+
+let newIframe = document.createElement('iframe');
+newIframe.setAttribute("src", `${arr[0]}`);
+newIframe.classList.add('trailer');
+
+
+function setAttributes(el, attrs) {
+  for(var key in attrs) {
+    el.setAttribute(key, attrs[key]);
+  }
+}
+
+setAttributes(newIframe, {"frameborder": "0", "allow": "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"});
 
 // Event Listeners
 // registryBtn.addEventListener('click', signUp);
@@ -14,8 +38,13 @@ const imgs = document.querySelectorAll('.img');
 document.addEventListener('scroll', backgroundChange)
 // slideshow.addEventListener('mouseover', revealArr);
 // slideshow.addEventListener('mouseout', hideIt);
+headerTxt.addEventListener('mouseover', playVid);
+container.addEventListener('mouseover', stopVid);
+newIframe.addEventListener('mouseout', removeElement);
+
 
 // Functions
+
 function backgroundChange() {
   if(document.documentElement.scrollTop >= 40) {
     navBar.classList.add('change');
@@ -23,6 +52,66 @@ function backgroundChange() {
     navBar.classList.remove('change');
   }
 }
+
+let playcount = 0;
+function playVid() {
+  if (playcount < 1) {
+    setTimeout(function() {
+      vid.setAttribute("src", "https://www.youtube.com/embed/dMIrlP61Z9s?rel=0&autoplay=1&loop=1&controls=0&modestbranding=1&autohide=1&fs=0&HD=1&title=0&iv_load_policy=3"); }, 1000);
+      playcount++;
+      console.log(playcount);
+  }
+}
+
+function stopVid() {
+  if (playcount > 0) {
+  setTimeout(function() {
+      vid.setAttribute("src", "https://www.youtube.com/embed/dMIrlP61Z9s?rel=0&autoplay=0&loop=1&controls=0&modestbranding=1&autohide=1&fs=0&HD=1&title=0&iv_load_policy=3"); }, 1000);
+      playcount--;
+      console.log(playcount);
+    }
+}
+
+
+for (let i = 0; i < imgs.length; i++) {
+  imgs[i].addEventListener('mouseover', function () {
+    for (let j = 0; j < images.length; j++) {
+      let num = j;
+      // let newOne = imgs[i].id;
+    if (i === j) {
+      console.log(num);
+      newIframe.style.position = "absolute";
+      imgs[i].after(newIframe);
+    } else {
+      console.log('nope');
+    }
+    }
+  })
+}
+
+// for (let i = 0; i < imgs.length; i++) {
+//   imgs[i].addEventListener('mouseout', function () {
+//     for (let j = 0; j < images.length; j++) {
+//       let num = j;
+//       // let newOne = imgs[i].id;
+//     if (i === j) {
+//       console.log(num);
+//       let element = document.querySelector(".trailer");
+//       element.parentNode.removeChild(element);
+
+//     } else {
+//       console.log('nope');
+//     }
+//     }
+//   })
+// }
+
+function removeElement() {
+      let element = document.querySelector(".trailer");
+      element.parentNode.removeChild(element);
+}
+
+
 
 function signUp() {
   if(emailInp.value === "") {
