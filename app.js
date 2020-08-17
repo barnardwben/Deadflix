@@ -89,22 +89,22 @@ for (let i = 0; i < imgs.length; i++) {
   })
 }
 
-for (let i = 0; i < imgs.length; i++) {
-  imgs[i].addEventListener('mouseout', function () {
-    for (let j = 0; j < images.length; j++) {
-      let num = j;
-      // let newOne = imgs[i].id;
-    if (i === j) {
-      console.log(num);
-      let element = document.querySelector(".trailer");
-      element.parentNode.removeChild(element);
+// for (let i = 0; i < imgs.length; i++) {
+//   imgs[i].addEventListener('mouseout', function () {
+//     for (let j = 0; j < images.length; j++) {
+//       let num = j;
+//       // let newOne = imgs[i].id;
+//     if (i === j) {
+//       console.log(num);
+//       let element = document.querySelector(".trailer");
+//       element.parentNode.removeChild(element);
 
-    } else {
-      console.log('nope');
-    }
-    }
-  })
-}
+//     } else {
+//       console.log('nope');
+//     }
+//     }
+//   })
+// }
 
 function removeElement() {
       let element = document.querySelector(".trailer");
