@@ -9,9 +9,6 @@ const formContainer = document.querySelector('.form-container');
 const filmSubmitBtn = document.querySelector('.filmFormSubmit');
 
 
-// Arrays
-// let filmImgs = ['imgs/nble.webp'];
-
 // Event listeners
 addBtn.addEventListener('click', openFilmForm);
 // filmSubmitBtn.addEventListener('click', addFilm);
@@ -187,7 +184,7 @@ const container = document.querySelector('.container');
 
 
 // // Event Listeners
-// // registryBtn.addEventListener('click', signUp);
+// registryBtn.addEventListener('click', signUp);
 // // signIn.addEventListener('click', logIn);
 document.addEventListener('scroll', backgroundChange)
 // slideshow.addEventListener('mouseover', revealArr);
@@ -225,46 +222,6 @@ function stopVid() {
       console.log(playcount);
     }
 }
-
-
-// for (let i = 0; i < imgs.length; i++) {
-//   imgs[i].addEventListener('mouseover', function () {
-//     for (let j = 0; j < images.length; j++) {
-//       let num = j;
-//       // let newOne = imgs[i].id;
-//     if (i === j) {
-//       console.log(num);
-//       newIframe.style.position = "absolute";
-//       imgs[i].after(newIframe);
-//     } else {
-//       console.log('nope');
-//     }
-//     }
-//   })
-// }
-
-// // for (let i = 0; i < imgs.length; i++) {
-// //   imgs[i].addEventListener('mouseout', function () {
-// //     for (let j = 0; j < images.length; j++) {
-// //       let num = j;
-// //       // let newOne = imgs[i].id;
-// //     if (i === j) {
-// //       console.log(num);
-// //       let element = document.querySelector(".trailer");
-// //       element.parentNode.removeChild(element);
-
-// //     } else {
-// //       console.log('nope');
-// //     }
-// //     }
-// //   })
-// // }
-
-// function removeElement() {
-//       let element = document.querySelector(".trailer");
-//       element.parentNode.removeChild(element);
-// }
-
 
 
 // function signUp() {
@@ -311,44 +268,6 @@ for (let i = 0; i < slideshow.length; i++) {
   })
 
 }
-
-
-
-// // for (let i = 0; i < nextArr.length; i++) {
-// //   let amount = 0;
-// //   nextArr[i].addEventListener('click', function() {
-// //     for (let j = 0; j < slideshow.length; j++) {
-// //       if (i === j) {
-// //         console.log(amount);
-// //         if (amount >= -2015) {
-// //           amount -=  1008;
-// //           let translateAmt = `translateX( ${amount}px)`;
-// //           slideshow[j].style.transform = translateAmt;
-// //           slideshow[j].style.transition = '.8s all ease-in-out';
-// //           slideshow[j].style.overflow = 'visible';
-// //         }
-// //       }
-// //     }
-// //   })
-// //   for (let i = 0; i < lastArr.length; i++) {
-// //     lastArr[i].addEventListener('click', function() {
-// //       for (let j = 0; j < slideshow.length; j++) {
-// //         if (i === j) {
-// //           console.log(amount);
-// //           if (amount <= -1) {
-// //             amount += 1008;
-// //             let translateAmt = `translateX( ${amount}px)`;
-// //             slideshow[j].style.transform = translateAmt;
-// //             slideshow[j].style.transition = '.8s all ease-in-out';
-// //             slideshow[j].style.overflow = 'visible';
-// //           }
-// //         }
-// //       }
-// //     })
-// //   }
-// // }
-
-
 
 
 for (let i = 0; i < nextArr.length; i++) {
