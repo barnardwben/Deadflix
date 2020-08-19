@@ -174,12 +174,12 @@ const filmImage = document.querySelector('.film-image').value;
 // const emailInp = document.querySelector('.email-input');
 // const sgnBtn = document.querySelector('.sgnBtn');
 // const registryBtn = document.querySelector('.registryBtn');
-// const navBar = document.querySelector('.nav-container');
-// const slideshow = document.querySelectorAll('.slideshow')
-// const nextArr = document.querySelectorAll('.next-arrow');
-// const lastArr = document.querySelectorAll('.last-arrow');
+const navBar = document.querySelector('.nav-container');
+const slideshow = document.querySelectorAll('.slideshow')
+const nextArr = document.querySelectorAll('.next-arrow');
+const lastArr = document.querySelectorAll('.last-arrow');
 // const imgs = document.querySelectorAll('.img');
-// const vid = document.querySelector('.off-vid');
+const vid = document.querySelector('.off-vid');
 // const headerTxt = document.querySelector('.header-text');
 // const overlay = document.querySelector('.overlay');
 // const container = document.querySelector('.container');
@@ -207,9 +207,9 @@ const filmImage = document.querySelector('.film-image').value;
 // // Event Listeners
 // // registryBtn.addEventListener('click', signUp);
 // // signIn.addEventListener('click', logIn);
-// document.addEventListener('scroll', backgroundChange)
-// // slideshow.addEventListener('mouseover', revealArr);
-// // slideshow.addEventListener('mouseout', hideIt);
+document.addEventListener('scroll', backgroundChange)
+// slideshow.addEventListener('mouseover', revealArr);
+// slideshow.addEventListener('mouseout', hideIt);
 // headerTxt.addEventListener('mouseover', playVid);
 // container.addEventListener('mouseover', stopVid);
 // newIframe.addEventListener('mouseout', removeElement);
@@ -217,32 +217,32 @@ const filmImage = document.querySelector('.film-image').value;
 
 // // Functions
 
-// function backgroundChange() {
-//   if(document.documentElement.scrollTop >= 40) {
-//     navBar.classList.add('change');
-//   } else {
-//     navBar.classList.remove('change');
-//   }
-// }
+function backgroundChange() {
+  if(document.documentElement.scrollTop >= 40) {
+    navBar.classList.add('change');
+  } else {
+    navBar.classList.remove('change');
+  }
+}
 
-// let playcount = 0;
-// function playVid() {
-//   if (playcount < 1) {
-//     setTimeout(function() {
-//       vid.setAttribute("src", "https://www.youtube.com/embed/dMIrlP61Z9s?rel=0&autoplay=1&loop=1&controls=0&modestbranding=1&autohide=1&fs=0&HD=1&title=0&iv_load_policy=3"); }, 1000);
-//       playcount++;
-//       console.log(playcount);
-//   }
-// }
+let playcount = 0;
+function playVid() {
+  if (playcount < 1) {
+    setTimeout(function() {
+      vid.setAttribute("src", "https://www.youtube.com/embed/dMIrlP61Z9s?rel=0&autoplay=1&loop=1&controls=0&modestbranding=1&autohide=1&fs=0&HD=1&title=0&iv_load_policy=3"); }, 1000);
+      playcount++;
+      console.log(playcount);
+  }
+}
 
-// function stopVid() {
-//   if (playcount > 0) {
-//   setTimeout(function() {
-//       vid.setAttribute("src", "https://www.youtube.com/embed/dMIrlP61Z9s?rel=0&autoplay=0&loop=1&controls=0&modestbranding=1&autohide=1&fs=0&HD=1&title=0&iv_load_policy=3"); }, 1000);
-//       playcount--;
-//       console.log(playcount);
-//     }
-// }
+function stopVid() {
+  if (playcount > 0) {
+  setTimeout(function() {
+      vid.setAttribute("src", "https://www.youtube.com/embed/dMIrlP61Z9s?rel=0&autoplay=0&loop=1&controls=0&modestbranding=1&autohide=1&fs=0&HD=1&title=0&iv_load_policy=3"); }, 1000);
+      playcount--;
+      console.log(playcount);
+    }
+}
 
 
 // for (let i = 0; i < imgs.length; i++) {
@@ -293,42 +293,42 @@ const filmImage = document.querySelector('.film-image').value;
 //   }
 // }
 
-// for(let i = 0; i < nextArr.length; i++) {
-//   nextArr[i].addEventListener('mouseover', function() {
-//     nextArr[i].style.visibility = 'visible';
-//   })
-// }
+for(let i = 0; i < nextArr.length; i++) {
+  nextArr[i].addEventListener('mouseover', function() {
+    nextArr[i].style.visibility = 'visible';
+  })
+}
 
-// for(let i = 0; i < lastArr.length; i++) {
-//   lastArr[i].addEventListener('mouseover', function() {
-//     lastArr[i].style.visibility = 'visible';
-//   })
-// }
+for(let i = 0; i < lastArr.length; i++) {
+  lastArr[i].addEventListener('mouseover', function() {
+    lastArr[i].style.visibility = 'visible';
+  })
+}
 
 
-// for (let i = 0; i < slideshow.length; i++) {
-//   slideshow[i].addEventListener('mouseover', function() {
-//     for (let j = 0; j < nextArr.length; j++) {
-//       if (i === j) {
-//       nextArr[j].style.visibility = 'visible';
-//       }
-//     }
-//     for (let a = 0; a < lastArr.length; a++) {
-//       if (i === a) {
-//       lastArr[a].style.visibility = 'visible';
-//       }
-//     }
-//   })
-//   slideshow[i].addEventListener('mouseout', function() {
-//     for (let j = 0; j < nextArr.length; j++) {
-//       nextArr[j].style.visibility = 'hidden';
-//     }
-//     for (let a = 0; a < lastArr.length; a++) {
-//       lastArr[a].style.visibility = 'hidden';
-//     }
-//   })
+for (let i = 0; i < slideshow.length; i++) {
+  slideshow[i].addEventListener('mouseover', function() {
+    for (let j = 0; j < nextArr.length; j++) {
+      if (i === j) {
+      nextArr[j].style.visibility = 'visible';
+      }
+    }
+    for (let a = 0; a < lastArr.length; a++) {
+      if (i === a) {
+      lastArr[a].style.visibility = 'visible';
+      }
+    }
+  })
+  slideshow[i].addEventListener('mouseout', function() {
+    for (let j = 0; j < nextArr.length; j++) {
+      nextArr[j].style.visibility = 'hidden';
+    }
+    for (let a = 0; a < lastArr.length; a++) {
+      lastArr[a].style.visibility = 'hidden';
+    }
+  })
 
-// }
+}
 
 
 
@@ -369,58 +369,58 @@ const filmImage = document.querySelector('.film-image').value;
 
 
 
-// for (let i = 0; i < nextArr.length; i++) {
-//   nextArr[i].addEventListener('click', function() {
-//     for (let j = 0; j < slideshow.length; j++) {
-//       if (i === j) {
-//         let val = window.getComputedStyle(slideshow[j]).getPropertyValue('transform');
-//         let newVal  = val.slice(19, 24);
-//         // newVal = Number(newVal);
-//         console.log(newVal);
-//         let stove = -1008;
-//         let start = -1008;
-//         if (Number(newVal) <= -2015) {
-//           console.log('yup');
-//         }
-//         else if (newVal <= 0) {
-//           let start1 = `translateX( ${Number(newVal) + start}px)`;
-//           slideshow[j].style.transform = start1;
-//           slideshow[j].style.transition = '.8s all ease-in-out';
-//           slideshow[j].style.overflow = 'visible';
+for (let i = 0; i < nextArr.length; i++) {
+  nextArr[i].addEventListener('click', function() {
+    for (let j = 0; j < slideshow.length; j++) {
+      if (i === j) {
+        let val = window.getComputedStyle(slideshow[j]).getPropertyValue('transform');
+        let newVal  = val.slice(19, 24);
+        // newVal = Number(newVal);
+        console.log(newVal);
+        let stove = -1008;
+        let start = -1008;
+        if (Number(newVal) <= -3024) {
+          console.log('yup');
+        }
+        else if (newVal <= 0) {
+          let start1 = `translateX( ${Number(newVal) + start}px)`;
+          slideshow[j].style.transform = start1;
+          slideshow[j].style.transition = '.8s all ease-in-out';
+          slideshow[j].style.overflow = 'visible';
 
-//         } else {
-//           let startOver = `translateX(${stove}px)`;
-//           slideshow[j].style.transform = startOver;
-//           slideshow[j].style.overflow = 'visible';
-//         }
+        } else {
+          let startOver = `translateX(${stove}px)`;
+          slideshow[j].style.transform = startOver;
+          slideshow[j].style.overflow = 'visible';
+        }
         
-//       }
-//     }
-//   })
-// }
+      }
+    }
+  })
+}
 
-// for (let i = 0; i < lastArr.length; i++) {
-//   lastArr[i].addEventListener('click', function() {
-//     for (let j = 0; j < slideshow.length; j++) {
-//       if (i === j) {
-//         let val = window.getComputedStyle(slideshow[j]).getPropertyValue('transform');
-//         let newVal  = val.slice(19, 24);
-//         // newVal = Number(newVal);
-//         console.log(newVal);
-//         let start = -1008
-//         let start1 = `translateX( ${Number(newVal) - start}px)`;
-//         if (newVal < 0) {
-//           slideshow[j].style.transform = start1;
-//           slideshow[j].style.overflow = 'visible';
-//         } else {
-//           console.log('greater than zero');
-//         }
+for (let i = 0; i < lastArr.length; i++) {
+  lastArr[i].addEventListener('click', function() {
+    for (let j = 0; j < slideshow.length; j++) {
+      if (i === j) {
+        let val = window.getComputedStyle(slideshow[j]).getPropertyValue('transform');
+        let newVal  = val.slice(19, 24);
+        // newVal = Number(newVal);
+        console.log(newVal);
+        let start = -1008
+        let start1 = `translateX( ${Number(newVal) - start}px)`;
+        if (newVal < 0) {
+          slideshow[j].style.transform = start1;
+          slideshow[j].style.overflow = 'visible';
+        } else {
+          console.log('greater than zero');
+        }
         
 
-//       }
-//     }
-//   })
-// }
+      }
+    }
+  })
+}
 
 
 
