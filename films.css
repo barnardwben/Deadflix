@@ -334,7 +334,7 @@ img:hover {
   padding: 50px 6.8px;
   /* text-align: center; */
   transition: .1s all ease-in-out;
-  /* visibility: hidden; */
+  visibility: hidden;
   z-index: 5;
   cursor: pointer;
 }
