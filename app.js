@@ -180,11 +180,9 @@ const nextArr = document.querySelectorAll('.next-arrow');
 const lastArr = document.querySelectorAll('.last-arrow');
 // const imgs = document.querySelectorAll('.img');
 const vid = document.querySelector('.off-vid');
-// const headerTxt = document.querySelector('.header-text');
-// const overlay = document.querySelector('.overlay');
-// const container = document.querySelector('.container');
-// const images = document.querySelectorAll('.poster');
-
+const headerTxt = document.querySelector('.header-text');
+const overlay = document.querySelector('.overlay');
+const container = document.querySelector('.container');
 
 // {/* <iframe width="853" height="480" src="https://www.youtube.com/embed/sBmYRXKXffs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
 
@@ -210,8 +208,8 @@ const vid = document.querySelector('.off-vid');
 document.addEventListener('scroll', backgroundChange)
 // slideshow.addEventListener('mouseover', revealArr);
 // slideshow.addEventListener('mouseout', hideIt);
-// headerTxt.addEventListener('mouseover', playVid);
-// container.addEventListener('mouseover', stopVid);
+headerTxt.addEventListener('mouseover', playVid);
+container.addEventListener('mouseover', stopVid);
 // newIframe.addEventListener('mouseout', removeElement);
 
 
