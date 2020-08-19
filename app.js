@@ -184,23 +184,7 @@ const headerTxt = document.querySelector('.header-text');
 const overlay = document.querySelector('.overlay');
 const container = document.querySelector('.container');
 
-// {/* <iframe width="853" height="480" src="https://www.youtube.com/embed/sBmYRXKXffs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
 
-// // Array of vids;
-// let arr = ['https://www.youtube.com/embed/sBmYRXKXffs'];
-
-// let newIframe = document.createElement('iframe');
-// newIframe.setAttribute("src", `${arr[0]}`);
-// newIframe.classList.add('trailer');
-
-
-// function setAttributes(el, attrs) {
-//   for(var key in attrs) {
-//     el.setAttribute(key, attrs[key]);
-//   }
-// }
-
-// setAttributes(newIframe, {"frameborder": "0", "allow": "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"});
 
 // // Event Listeners
 // // registryBtn.addEventListener('click', signUp);
