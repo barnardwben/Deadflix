@@ -1,3 +1,175 @@
+// On addbtn click
+// 1. Open form input that takes in title of the film, year of the film, director of the film, and cover image of film.
+// 2. Turn addbtn into a X logo, which upon clicking will close the form and turn back to add logo
+// 3. When form is submitted, the new film gets added to localStorage, recently added carousel, and carousel of the year it came out
+
+// Variables
+const addBtn = document.querySelector('.add-btn');
+const formContainer = document.querySelector('.form-container');
+const filmSubmitBtn = document.querySelector('.filmFormSubmit');
+
+
+// Arrays
+// let filmImgs = ['imgs/nble.webp'];
+
+// Event listeners
+addBtn.addEventListener('click', openFilmForm);
+// filmSubmitBtn.addEventListener('click', addFilm);
+
+// Functions
+function openFilmForm() {
+  if (!formContainer.classList.contains('open')) {
+    formContainer.classList.add('open');
+    addBtn.style.transform = "rotate(405deg)";
+  } else {
+    formContainer.classList.remove('open');
+    addBtn.style.transform = "rotate(0deg)";
+  }
+}
+
+function setAttributes(el, attrs) {
+  for(var key in attrs) {
+    el.setAttribute(key, attrs[key]);
+  }
+}
+
+// Film class: Represents a film
+class Film {
+  constructor(title, year, director, image) {
+    this.title = title;
+    this.year = year;
+    this.director = director;
+    this.image = image;
+  }
+}
+
+// UI class: Handles UI Tasks
+class UI {
+  static displayFilms() {
+    const films = Store.getFilms();
+
+    films.forEach((film) => UI.addFilmToList(film));
+    films.forEach((film) => UI.createEl(film));
+  }
+
+  static addFilmToList(film) {
+    const recentlyAdded = document.querySelector('.recently-added');
+    // const dec2010 = document.querySelector('.dec2010');
+
+
+    const div = document.createElement('div');
+    div.classList.add('img');
+
+    div.innerHTML = `
+      <img src=${film.image} alt="">
+    `;
+    
+    recentlyAdded.insertBefore(div, recentlyAdded.childNodes[0]);
+
+    // if(Number(film.year) >= 2010) {
+    //   const div = document.createElement('div');
+    // div.classList.add('img');
+
+    // div.innerHTML = `
+    //   <a href="#recently-added"><img src=${film.image} class="poster poster1" alt=""></a>
+    // `;
+    //   dec2010.insertBefore(div, dec2010.childNodes[0]);
+    // }
+  }
+
+  static createEl(film) {
+    const div = document.createElement('div');
+    div.classList.add('img');
+
+    div.innerHTML = `
+      <img src=${film.image} alt="">
+    `;
+    let num = Number(film.year);
+
+    return num >= 2010 ? document.querySelector('.dec2010').insertBefore(div, document.querySelector('.dec2010').childNodes[0]) : num >= 2000 ? document.querySelector('.dec2000').insertBefore(div, document.querySelector('.dec2000').childNodes[0]) : num >= 1990 ? document.querySelector('.dec1990').insertBefore(div, document.querySelector('.dec1990').childNodes[0]) : num >= 1980 ? document.querySelector('.dec1980').insertBefore(div, document.querySelector('.dec1980').childNodes[0]) : num >= 1970 ? document.querySelector('.dec1970').insertBefore(div, document.querySelector('.dec1970').childNodes[0]) : num >= 1960 ? document.querySelector('.dec1960').insertBefore(div, document.querySelector('.dec1960').childNodes[0]) : num <= 1959 ? document.querySelector('.dec1950').insertBefore(div, document.querySelector('.dec1950').childNodes[0]) : console.log('not a year');
+  }
+
+  static clearFields() {
+    document.querySelector('.film-title').value = '';
+    document.querySelector('.film-year').value = '';
+    document.querySelector('.film-director').value = '';
+    document.querySelector('.film-image').value = '';
+  }
+}
+
+// Store Class: Handles Storage
+class Store {
+  static getFilms() {
+    let films;
+    if(localStorage.getItem('films') === null) {
+      films = [];
+    } else {
+      films = JSON.parse(localStorage.getItem('films'));
+    }
+      return films;
+  }
+
+  static addFilm(film) {
+    const films = Store.getFilms();
+
+    films.push(film);
+
+    localStorage.setItem('films', JSON.stringify(films));
+  }
+
+}
+
+// Events: Display Books
+document.addEventListener('DOMContentLoaded', UI.displayFilms);
+
+// Event: Add a Book
+const filmForm = document.querySelector('.film-form').addEventListener('submit', (e) => {
+  // Prevent actual submit
+  e.preventDefault();
+  // Get form value
+  const filmTitle = document.querySelector('.film-title').value;
+const filmYear = document.querySelector('.film-year').value;
+const filmDirector = document.querySelector('.film-director').value;
+const filmImage = document.querySelector('.film-image').value;
+
+  // Validate
+  if(filmTitle === '' || filmYear === '' || filmDirector === '' || filmImage === '') {
+    alert('Please fill in all fields');
+  } else {
+     // Instatiate book
+  const film = new Film(filmTitle, filmYear, filmDirector, filmImage);
+
+  // Add Book to UI
+  UI.addFilmToList(film);
+
+  // Add book to store
+  Store.addFilm(film);
+
+  // Show success message
+  alert('Film added');
+
+  // Clear fields
+  UI.clearFields();
+
+  // Adding to appropriate Decade
+  UI.createEl(film);
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Variables
 const emailInp = document.querySelector('.email-input');
 const sgnBtn = document.querySelector('.sgnBtn');
