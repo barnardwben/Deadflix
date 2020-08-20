@@ -93,7 +93,7 @@ body {
   color: #8c8c8c;
 }
 
-.registryBtn {
+.registry {
   background-color: #E50914;
   color: #FFF;
   font-family: 'Roboto', sans-serif;
@@ -109,6 +109,8 @@ body {
 
 .carrot {
   font-family: 'Zilla Slab', serif;
+  position: relative;
+  left: -25px;
 }
 
 /* login page */
