@@ -21,18 +21,18 @@
 <div class="login-body-header">
   <div class="login-form">
     <h1 class="h1-signIn">Sign In</h1>
-    <form action="">
+    <form class="sign-in-form">
       <div>
-        <input type="text" placeholder="Email or Phone Number" class="input-login email-input">
+        <input type="email" placeholder="Email or Phone Number" class="input-login email-input" required>
       </div>
       <div>
-        <input type="text" placeholder="Password" class="input-login password-input">
+        <input type="password" placeholder="Password" class="input-login password-input" required>
       </div>
       <div>
-        <button type="button" class="sgnBtn">Sign In</button>
+        <input type="submit" class="sgnBtn" value="Sign In"></input>
       </div>
       <div class="chkbx">
-        <input type="checkbox" id="check-box">
+        <input type="checkbox" id="check-box" class="checkBox" checked>
         <label for="check-box" id="" class="rmme">Remember me</label>
       </div>
     </form>
@@ -41,7 +41,7 @@
 
 
 
-  <script src="app.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>
 
