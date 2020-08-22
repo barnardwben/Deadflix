@@ -9,10 +9,20 @@
 const addBtn = document.querySelector('.add-btn');
 const formContainer = document.querySelector('.form-container');
 const filmSubmitBtn = document.querySelector('.filmFormSubmit');
+const signOutBtn = document.querySelector('.sign-out-btn');
+const signOutFormContainer = document.querySelector('.signOut-container');
+const signOutForm = document.querySelector('.signOut-form');
+const subOne = document.querySelector('.yes');
+const subTwo = document.querySelector('.no');
+
 
 
 // Event listeners
 addBtn.addEventListener('click', openFilmForm);
+signOutBtn.addEventListener('click', signOut);
+// signOutForm.addEventListener('submit', stayOrGo);
+subOne.addEventListener('click', leaveSite);
+subTwo.addEventListener('click', stayHere);
 
 // Functions
 function openFilmForm() {
@@ -30,6 +40,25 @@ function setAttributes(el, attrs) {
     el.setAttribute(key, attrs[key]);
   }
 }
+
+function signOut() {
+  if (!signOutFormContainer.classList.contains('open-signOut')) {
+    signOutFormContainer.classList.add('open-signOut');
+  } else {
+    signOutFormContainer.classList.remove('open-signOut');
+  }
+}
+
+function leaveSite() {
+  window.location.href = "http://127.0.0.1:5500/index.html";
+  signOutFormContainer.classList.remove('open-signOut');
+}
+
+function stayHere() {
+  signOutFormContainer.classList.remove('open-signOut');
+}
+
+
 
 // Film class: Represents a film
 class Film {
