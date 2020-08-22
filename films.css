@@ -169,7 +169,7 @@ body {
   justify-content: center;
   align-items: center;
   /* visibility: hidden; */
-  transition: .9s all ease-in-out;
+  transition: 2s all ease-in-out;
 }
 
 .open-signOut {
