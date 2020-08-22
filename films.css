@@ -158,6 +158,35 @@ body {
   outline: none;
 }
 
+.signOut-container {
+  position: absolute;
+  /* top: -100vh; */
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  /* background: chartreuse; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* visibility: hidden; */
+  transition: .9s all ease-in-out;
+}
+
+.open-signOut {
+  transform: translateX(-300px);
+}
+
+.h3-text {
+  /* position: absolute; */
+  text-align: center;
+  /* top: 3vh; */
+  font-size: 18px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
 /* Header */
 .off-vid {
   position: absolute;
