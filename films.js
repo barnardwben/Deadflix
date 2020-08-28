@@ -14,6 +14,8 @@ const signOutFormContainer = document.querySelector('.signOut-container');
 const signOutForm = document.querySelector('.signOut-form');
 const subOne = document.querySelector('.yes');
 const subTwo = document.querySelector('.no');
+const searchBtn = document.querySelector('.search-btn');
+const searchBar = document.querySelector('.search-bar');
 
 
 
