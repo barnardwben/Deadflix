@@ -38,6 +38,14 @@ function openFilmForm() {
   }
 }
 
+function openSearch() {
+  if(searchBar.classList.contains('search-none')) {
+    searchBar.classList.remove('search-none');
+  } else {
+    searchBar.classList.add('search-none');
+  }
+}
+
 function setAttributes(el, attrs) {
   for(var key in attrs) {
     el.setAttribute(key, attrs[key]);
