@@ -25,6 +25,7 @@ signOutBtn.addEventListener('click', signOut);
 // signOutForm.addEventListener('submit', stayOrGo);
 subOne.addEventListener('click', leaveSite);
 subTwo.addEventListener('click', stayHere);
+searchBtn.addEventListener('click', openSearch);
 
 // Functions
 function openFilmForm() {
