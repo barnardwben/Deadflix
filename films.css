@@ -89,6 +89,7 @@ body {
   top: -2px;
   animation-duration: 1s;
   animation-name: slidein;
+
   /* transition: .3s all ease-in-out; */
 }
 
@@ -105,8 +106,8 @@ body {
 .search-none {
   animation-duration: 1s;
   animation-name: slideout;
-  /* display: none; */
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden; */
   /* width: 0px; */
 }
 
@@ -117,6 +118,7 @@ body {
 
   100% {
     width: 0px;
+    /* visibility: hidden; */
   }
 }
 
