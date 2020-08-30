@@ -89,7 +89,7 @@ body {
   top: -2px;
   animation-duration: 1s;
   animation-name: slidein;
-
+  outline: none;
   /* transition: .3s all ease-in-out; */
 }
 
