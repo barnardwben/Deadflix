@@ -104,22 +104,9 @@ body {
 }
 
 .search-none {
-  animation-duration: 1s;
-  animation-name: slideout;
   display: none;
   /* visibility: hidden; */
   /* width: 0px; */
-}
-
-@keyframes slideout {
-  0% {
-    width: 175px;
-  }
-
-  100% {
-    width: 0px;
-    /* visibility: hidden; */
-  }
 }
 
 
