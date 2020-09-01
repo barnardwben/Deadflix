@@ -20,7 +20,6 @@ const searchBar = document.querySelector('.search-bar');
 
 
 // Event listeners
-addBtn.addEventListener('click', openFilmForm);
 signOutBtn.addEventListener('click', signOut);
 // signOutForm.addEventListener('submit', stayOrGo);
 subOne.addEventListener('click', leaveSite);
@@ -104,84 +103,13 @@ class UI {
     recentlyAdded.insertBefore(div, recentlyAdded.childNodes[0]);
   }
 
-  static createEl(film) {
-    const div = document.createElement('div');
-    div.classList.add('img');
-
-    div.innerHTML = `
-      <img src=${film.image} alt="">
-    `;
-    let num = Number(film.year);
-
-    return num >= 2010 ? document.querySelector('.dec2010').insertBefore(div, document.querySelector('.dec2010').childNodes[0]) : num >= 2000 ? document.querySelector('.dec2000').insertBefore(div, document.querySelector('.dec2000').childNodes[0]) : num >= 1990 ? document.querySelector('.dec1990').insertBefore(div, document.querySelector('.dec1990').childNodes[0]) : num >= 1980 ? document.querySelector('.dec1980').insertBefore(div, document.querySelector('.dec1980').childNodes[0]) : num >= 1970 ? document.querySelector('.dec1970').insertBefore(div, document.querySelector('.dec1970').childNodes[0]) : num >= 1960 ? document.querySelector('.dec1960').insertBefore(div, document.querySelector('.dec1960').childNodes[0]) : num <= 1959 ? document.querySelector('.dec1950').insertBefore(div, document.querySelector('.dec1950').childNodes[0]) : console.log('not a year');
-  }
-
-  static clearFields() {
-    document.querySelector('.film-title').value = '';
-    document.querySelector('.film-year').value = '';
-    document.querySelector('.film-director').value = '';
-    document.querySelector('.film-image').value = '';
-  }
 }
-
 // Store Class: Handles Storage
-class Store {
-  static getFilms() {
-    let films;
-    if(localStorage.getItem('films') === null) {
-      films = [];
-    } else {
-      films = JSON.parse(localStorage.getItem('films'));
-    }
-      return films;
-  }
 
-  static addFilm(film) {
-    const films = Store.getFilms();
-
-    films.push(film);
-
-    localStorage.setItem('films', JSON.stringify(films));
-  }
-
-}
 
 // Events: Display Books
-document.addEventListener('DOMContentLoaded', UI.displayFilms);
-
 // Event: Add a Book
-const filmForm = document.querySelector('.film-form').addEventListener('submit', (e) => {
-  // Prevent actual submit
-  e.preventDefault();
-  // Get form value
-  const filmTitle = document.querySelector('.film-title').value;
-  const filmYear = document.querySelector('.film-year').value;
-  const filmDirector = document.querySelector('.film-director').value;
-  const filmImage = document.querySelector('.film-image').value;
 
-  // Validate
-  if(filmTitle === '' || filmYear === '' || filmDirector === '' || filmImage === '') {
-    alert('Please fill in all fields');
-  } else {
-     // Instatiate book
-  const film = new Film(filmTitle, filmYear, filmDirector, filmImage);
-
-  // Add Book to UI
-  UI.addFilmToList(film);
-
-  // Add book to store
-  Store.addFilm(film);
-
-  // Show success message
-  alert('Film added');
-
-  // Clear fields
-  UI.clearFields();
-
-  // Adding to appropriate Decade
-  UI.createEl(film);
-  }
-});
 
 
 
@@ -230,7 +158,7 @@ let playcount = 0;
 function playVid() {
   if (playcount < 1) {
     setTimeout(function() {
-      vid.setAttribute("src", "https://www.youtube.com/embed/dMIrlP61Z9s?rel=0&autoplay=1&loop=1&controls=0&modestbranding=1&autohide=1&fs=0&HD=1&title=0&iv_load_policy=3"); }, 0500);
+      vid.setAttribute("src", "https://www.youtube.com/embed/SUXWAEX2jlg?rel=0&autoplay=1&loop=1&controls=0&modestbranding=1&autohide=1&fs=0&HD=1&title=0&iv_load_policy=3"); }, 0500);
       playcount++;
       console.log(playcount);
   }
@@ -239,7 +167,7 @@ function playVid() {
 function stopVid() {
   if (playcount > 0) {
   setTimeout(function() {
-      vid.setAttribute("src", "https://www.youtube.com/embed/dMIrlP61Z9s?rel=0&autoplay=0&loop=1&controls=0&modestbranding=1&autohide=1&fs=0&HD=1&title=0&iv_load_policy=3"); }, 0500);
+      vid.setAttribute("src", "https://www.youtube.com/embed/SUXWAEX2jlg?rel=0&autoplay=0&loop=1&controls=0&modestbranding=1&autohide=1&fs=0&HD=1&title=0&iv_load_policy=3"); }, 0500);
       playcount--;
       console.log(playcount);
     }
