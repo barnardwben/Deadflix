@@ -276,9 +276,9 @@ body {
 }
 .fight-grid {
   grid-column: 1;
-  margin: 100px 150px 0 50px;
+  margin: 60px 150px 0 50px;
   position: relative;
-  top: 80px;
+  top: 30px;
   font-family: 'Fira Sans', sans-serif;
   color: #fff;
 }
@@ -291,7 +291,7 @@ body {
   z-index: -1;
 }
 .fight-grid > h1 {
-  font-size: 50px;
+  font-size: 70px;
   font-family: 'Special Elite', cursive;
   color: rgb(202, 73, 144);
   position: relative;
