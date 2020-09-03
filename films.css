@@ -274,11 +274,26 @@ body {
   font-family: 'Fira Sans', sans-serif;
   color: #fff;
 }
+.fight-grid {
+  grid-column: 1;
+  margin: 100px 150px 0 50px;
+  position: relative;
+  top: 80px;
+  font-family: 'Fira Sans', sans-serif;
+  color: #fff;
+}
 
 .office-grid > h1 {
   font-size: 50px;
   font-family: 'Lakki Reddy', cursive;
   color: rgb(129, 31, 31);
+  position: relative;
+  z-index: -1;
+}
+.fight-grid > h1 {
+  font-size: 50px;
+  font-family: 'Special Elite', cursive;
+  color: rgb(202, 73, 144);
   position: relative;
   z-index: -1;
 }
