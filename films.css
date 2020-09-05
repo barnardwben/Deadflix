@@ -68,6 +68,7 @@ body {
 
 .my-list-link {
   color: rgb(151, 151, 151);
+  cursor: pointer;
 }
 
 .my-list {
