@@ -295,7 +295,7 @@ body {
 .fight-grid > h1 {
   font-size: 70px;
   line-height: 55px;
-  /* margin: 0; */
+  margin-left: 20px;
   font-family: 'Ranga', cursive;
   color: rgb(202, 73, 144);
   position: relative;
