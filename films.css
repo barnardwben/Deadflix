@@ -281,8 +281,10 @@ body {
 .office-grid > h1 {
   font-size: 50px;
   font-family: 'Lakki Reddy', cursive;
+  margin: -20px 0 -10px 0;
   color: rgb(129, 31, 31);
   position: relative;
+  line-height: 3rem;
   z-index: -1;
 }
 
@@ -335,8 +337,8 @@ body {
 
 @media screen and (max-width: 1100px) {
   .p1 {
-    font-size: 15px;
-    margin-top: -50px;
+    font-size: 17px;
+    margin-top: 0px;
   }
 }
 
